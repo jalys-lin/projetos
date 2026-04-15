@@ -12,7 +12,6 @@ h2,p{
     font-size: larger;
     
 }
-
 .tabelaTicTacToe{
     display: grid;
     grid-template: 100px 100px 100px / 100px 100px 100px;
