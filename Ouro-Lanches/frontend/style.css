@@ -1,0 +1,517 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #FFD700;
+    --secondary-color: #FFA500;
+    --dark-color: #333;
+    --light-color: #f8f9fa;
+    --success-color: #28a745;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header e Navbar */
+header {
+    background-color: var(--dark-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    border-top: 1rem;
+    padding: 0.5rem 0 0.2rem;
+}
+
+.navbar .navbar-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo h1 {
+    background-color: #ffffff10;
+    color: var(--primary-color);
+    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
+    margin-right: 1rem;
+    font-size: 1.8rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link,
+.dashboard-link{
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active{
+    color: var(--primary-color);
+}
+
+.btn-login {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-login:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+#perfil {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--dark-color);
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+/* Botões */
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: white;
+    bottom: 20px;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    color: var(--dark-color);
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 200px));
+    grid-template-rows: repeat(auto-fill, minmax(1, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    border: 1px solid #e0e0e0;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+    height: 50%;
+}
+
+.card-content h3 {
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+    height: 3em;
+}
+
+.descricao-lanche {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.preco {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.rating {
+    bottom: 0;
+    color: var(--primary-color);
+    margin: 0.5rem 0;
+}
+
+/* Filtros */
+.filtros {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.filtros input,
+.filtros select {
+    padding: 0.7rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.filtros input {
+    flex: 1;
+    max-width: 400px;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.modal-content h2 {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.close {
+    float: right;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close:hover {
+    color: var(--dark-color);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form input,
+form textarea,
+form select {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+form button {
+    margin-top: 0.5rem;
+}
+
+form p {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+form a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+/* Lanchonetes Section */
+.lanchonetes {
+    background-color: var(--light-color);
+}
+
+/* Lanches Section */
+.lanches {
+    background-color: white;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .grid {
+        grid-template-columns:1fr 1fr 1fr;
+        gap: 0.6rem;
+    }
+
+    .card {
+        max-height: 350px;
+    }
+
+    .card-image {
+        height: 150px;
+    }
+
+    .card-content{
+        padding: 0.5rem;
+    }
+
+    .card-content h3 {
+        font-size: 0.9rem;
+        padding: 0 0 0.5rem;
+        margin: 0;
+    }
+
+    .card-content p,
+    .rating {
+        font-size: 0.7rem;
+        bottom: 20px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .descricao-lanche {
+        display: none;
+    }
+
+    /*botões*/
+    .btn-primary {
+        display: none;
+    }
+
+    .filtros input {
+        max-width: 100%;
+    }
+
+    .filtros select{
+        max-width: 30%;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+}
+
+/* responsividade Celular */
+
+@media (max-width: 450px) {
+
+    .logo h1 {
+        display: none;
+    }
+
+    .nav-links {
+        display:contents;
+        left: 10px;
+        gap: 0.3rem;
+        margin-bottom: 0.1;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+
+    .nav-links button {
+        max-width: 100px;
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    #lanches{
+        padding: 2rem 1rem;
+    }
+
+    #cardapio,
+    #lanchonetes {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .filtros{
+        gap: 0.2rem;
+        margin-bottom: min(1rem, 5vw);
+    }
+
+    .filtros input,
+    .filtros select {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.9rem;
+    }
+
+    .filtros select {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 0.8rem;
+        padding-right: 0;
+    }
+
+    .grid {
+        grid-template-columns:1fr 1fr 1fr;
+        gap: 0.6rem;
+    }
+
+    .card {
+        max-height: 180px;
+    }
+
+    .card.expandida {
+        position: fixed; /* Fixa na tela, independente do scroll */
+        top: 0;
+        left: 0;
+        width: 100vw;   /* 100% da largura da tela */
+        height: 100vh;  /* 100% da altura da tela */
+        border-radius: 0;
+        z-index: 9999;  /* Fica na frente de tudo */
+    }
+
+    .card-image {
+        height: 70px;
+    }
+
+    .card-content{
+        padding: 0.5rem;
+    }
+
+    .card-content h3 {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 3em;
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+    .card-content p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 0.7rem;
+        bottom: 20px;
+        padding: 0;
+        margin: 0;
+    }
+}

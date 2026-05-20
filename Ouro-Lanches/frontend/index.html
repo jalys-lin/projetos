@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ouro Lanches - Plataforma de Anúncio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header e Navegação -->
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="logo">
+                    <a class="dashboard-link" href="#dashboard">
+                        <h1>Ouro Lanches</h1>
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active" >Início</a></li>
+                    <li><a href="#lanches" class="nav-link">Cardápio</a></li>
+                    <li><a href="#lanchonetes" class="nav-link">Lanchonetes</a></li>
+                </ul>
+                <button id="loginBtn" class="btn-login">Login</button>
+                <img id="perfil" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Foto de perfil">
+            </div>
+        </nav>
+    </header>
+
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Senha" required>
+                <button type="submit" class="btn-primary">Entrar</button>
+                <p>Não tem conta? <a href="#" id="toggleRegister">Cadastre-se</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Cadastro -->
+    <div id="registerModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Cadastro de Lanchonete</h2>
+            <form id="registerForm">
+                <input type="text" id="nomeEmpresa" placeholder="Nome da Lanchonete" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Senha" required>
+                <input type="tel" placeholder="Telefone" required>
+                <input type="text" placeholder="Endereço" required>
+                <input type="text" placeholder="Cidade" required>
+                <button type="submit" class="btn-primary">Cadastrar</button>
+                <p>Já tem conta? <a href="#" id="toggleLogin">Faça login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Section Inicial -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Bem-vindo ao Ouro Lanches</h1>
+            <p>A plataforma número 1 para descobrir e encomendar seus lanches favoritos</p>
+            <a href="#lanchonetes"><button id="explorarBtn" class="btn-primary">Saiba Mais</button></a>
+        </div>
+    </section>
+
+    <!-- Section de Lanches -->
+    <section id="lanches" class="lanches">
+        <div class="container">
+            <h2 id="cardapio">Cardápio</h2>
+            <div class="filtros">
+                <input type="text" id="searchLanches" placeholder="Buscar lanche...">
+                <select id="filterLanchonete">
+                    <option value="">Todas as Lanchonetes</option>
+                </select>
+            </div>
+            <div id="lanchesContainer" class="grid">
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Section de Lanchonetes -->
+    <section id="lanchonetes" class="lanchonetes">
+        <div class="container">
+            <h2 id="lanchonetes">Lanchonetes da Sua Cidade</h2>
+            <div id="lanchonetesList" class="grid"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Ouro Lanches. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script de Modal para Lanchonete (quando logado) -->
+    <div id="adicionarLancheModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Adicionar Novo Lanche</h2>
+            <form id="adicionarLancheForm">
+                <input type="text" id="nomeLanche" placeholder="Nome do Lanche" required>
+                <textarea id="descricaoLanche" placeholder="Descrição" required></textarea>
+                <input type="number" id="precoLanche" placeholder="Preço (R$)" step="0.01" required>
+                <input type="text" id="categoriaLanche" placeholder="Categoria (ex: X-Burguer, Pastel)" required>
+                <input type="file" id="imagemLanche" accept="image/*">
+                <button type="submit" class="btn-primary">Adicionar Lanche</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
