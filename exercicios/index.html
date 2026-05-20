@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>estudo programação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--Exercício 1: Gerar um número aleatório de 1 ao número de esculha aon usuário -->
+    
+    <h3>Número Aleatório:</h3>
+    <p>Gerar Número Aleatório entre <input type="number" id="minRoll" value="10" > e <input type="number" id="maxRoll" value="10" > <button  id="gerarNum">Rolar</button></p>
+    <p id="numAleatorio"></p>
+    
+    <hr>
+    <!--Exercício 2: abrir link--> 
+
+    <p>Abrir Google:</p>
+    <button id="abrirLink">Abrir Google</button>
+
+    <!--Exercício 3: calcular  notas--><hr>
+    
+    <form id="formNotas" onsubmit="return false;">
+        <h3>Calcular Notas no Ano:</h3>
+
+        <!--Nota máxima Possível-->
+        <label for="notaMax">Nota máxima</label><br>
+        <input type="number" id="notaMax" min="0" placeholder="Nota Máxima" style="width: 130px;" required>
+        <br><br>
+
+        <div style="display: flex; flex-direction: row; justify-content: space-between; max-width: 800px;"">
+            <!-- Bimestres-->
+            <div>
+                <!--Nota 1° Bimestre-->
+                <label for="nota1" >1° Bimestre</label><br>
+                <input type="number" min="0" id="nota1" placeholder="Nota 1° Bim."  style="width: 130px;" required> 
+            </div>
+            <div>
+                <!--Nota 2° Bimestre-->
+                <label for="nota2">2° Bimestre</label><br>
+                <input  type="number" min="0" id="nota2" placeholder="Nota 2° Bim." style="width: 130px;" required> 
+            </div>
+            <div>
+                <!--Nota 3° Bimestre-->
+                <label for="nota3">3° Bimestre</label><br>
+                <input type="number" min="0" id="nota3" placeholder="Nota 3° Bim."  style="width: 130px;" required> 
+            </div>
+            <div>
+                <!--Nota 4° Bimestre-->
+                <label for="nota4">4° Bimestre</label><br>
+                <input type="number" min="0" id="nota4" placeholder="Nota 4° Bim."  style="width: 130px;" required> 
+            </div>
+    
+        </div><br>
+
+        <!-- Botão para exibir os valores das notas -->
+        <button id="valorArray" >Exibir Notas</button>
+        <p>Valor das notas: <span id="valorDisplay"></span></p><br>
+
+        <button id="calcularMedia">Calcular Média</button>
+        <br><br>
+
+        <!--Recuperação-->
+        <label for="recuperacao">Insira aqui a nota de recuperação caso necessário:</label><br>
+        <input type="number" min="0" id="recuperacao" placeholder="Nota Recuperação" style="width: 130px;" required required disabled>
+    </form><br>
+    
+    <fieldset style="max-width: 800px;">
+        <legend>Média Final</legend>
+        <p id="mediaFinal"></p>
+    </fieldset>
+
+    <!--Exercício 4: Calculadora-->
+    <div id="calculadora">
+    <h3>Calculadora Simples</h3>
+    
+        <label for="calculadora">num 1</label>
+        <input type="text" name:"numero-1">
+        <br><!--numero 1-->
+        
+        <label for="calculadora">num 2</label>
+        <input type="text" name:"numero-2">
+        <br><!--numero 2-->
+        <form>
+            <input type="radio" name="operacao" id="multiplicacao" value="*" >
+            <label for="multiplicacao">Multiplicação</label>
+
+            <input type="radio" name="operacao" id="divisao" value="/" >
+            <label for="divisao">Divisão</label>
+
+            <input type="radio" name="operacao" id="soma" value="+" >
+            <label for="soma">Soma</label>
+
+            <input type="radio" name="operacao" id="subtracao" value="-" >
+            <label for="subtracao">Subtração</label>
+        </form>
+        <br><br>
+        <button id="calcular">Calcular</button>
+
+        <p id="resultado"></p>
+    </div>
+
+    <script src="exercicio1.js"></script>
+</body>
+</html>
